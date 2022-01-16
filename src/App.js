@@ -1,30 +1,24 @@
-import React, { useState } from "react";
-import AddUser from "./components/AddUser";
-import CardModal from "./components/CardModal";
-import UsersList from "./components/UsersList";
+import React, { useState } from 'react';
+
+import AddUser from './components/Users/AddUser';
+import UsersList from './components/Users/UsersList';
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [showAlert, setShowAlert] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [usersList, setUsersList] = useState([]);
 
-  const saveUserHandler = (newUser) => {
-    setUsers((state) => {
-      return [newUser, ...state];
+  const addUserHandler = (uName, uAge) => {
+    setUsersList((prevUsersList) => {
+      return [
+        ...prevUsersList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
     });
   };
-  const usersLength = users.length;
+
   return (
     <div>
-      <AddUser
-        onSaveUser={saveUserHandler}
-        setErrorMessage={setErrorMessage}
-        setShowAlert={setShowAlert}
-      />
-      {showAlert && (
-        <CardModal errorMessage={errorMessage} setShowAlert={setShowAlert} />
-      )}
-      {usersLength > 0 && <UsersList users={users} />}
+      <AddUser onAddUser={addUserHandler} />
+      <UsersList users={usersList} />
     </div>
   );
 }
