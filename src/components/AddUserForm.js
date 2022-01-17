@@ -39,10 +39,16 @@ const AddUserForm = ({ onSaveUser, setShowAlert, setErrorMessage }) => {
   };
   return (
     <form onSubmit={submitHandler} className={styles.form}>
-      <label>Username</label>
-      <input type="text" value={userName} onChange={userNameChangeHandler} />
-      <label>Age(Years)</label>
+      <label htmlFor="username">Username</label>
       <input
+        id="username"
+        type="text"
+        value={userName}
+        onChange={userNameChangeHandler}
+      />
+      <label htmlFor="age">Age(Years)</label>
+      <input
+        id="age"
         type="number"
         min="0"
         step="1"
