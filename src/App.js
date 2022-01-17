@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddUser from "./components/Users/AddUser";
-import CardModal from "./components/Users/CardModal";
+import CardModal from "./components/UI/CardModal";
 import UsersList from "./components/Users/UsersList";
 
 function App() {
@@ -13,6 +13,10 @@ function App() {
       return [newUser, ...state];
     });
   };
+
+  const closeModalHandler = () => {
+    setShowAlert(false);
+  };
   const usersLength = users.length;
   return (
     <div>
@@ -22,7 +26,10 @@ function App() {
         setShowAlert={setShowAlert}
       />
       {showAlert && (
-        <CardModal errorMessage={errorMessage} setShowAlert={setShowAlert} />
+        <CardModal
+          errorMessage={errorMessage}
+          closeModalHandler={closeModalHandler}
+        />
       )}
       {usersLength > 0 && <UsersList users={users} />}
     </div>

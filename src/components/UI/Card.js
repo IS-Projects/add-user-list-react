@@ -7,7 +7,11 @@ const Card = (props) => {
 
   const Tag = props.as || "div";
 
-  return <Tag className={classes}>{props.children}</Tag>;
+  return (
+    <Tag className={classes} onClick={props.onClick}>
+      {props.children}
+    </Tag>
+  );
 };
 
 export default Card;
