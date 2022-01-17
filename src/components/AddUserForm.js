@@ -22,7 +22,7 @@ const AddUserForm = ({ onSaveUser, setShowAlert, setErrorMessage }) => {
       return;
     }
 
-    if (userAge < 1) {
+    if (+userAge < 1) {
       setErrorMessage("Please enter a valid age (>0).");
       setShowAlert(true);
       return;
