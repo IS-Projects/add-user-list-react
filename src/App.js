@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AddUser from "./components/AddUser";
-import CardModal from "./components/CardModal";
-import UsersList from "./components/UsersList";
+import AddUser from "./components/Users/AddUser";
+import CardModal from "./components/Users/CardModal";
+import UsersList from "./components/Users/UsersList";
 
 function App() {
   const [users, setUsers] = useState([]);
