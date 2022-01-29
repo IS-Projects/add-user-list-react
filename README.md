@@ -1,6 +1,6 @@
 # add-user-list-react
 
-This repository is created based on the sixth module of the course "React - The Complete Guide 2022" by Maximilian Schwarzmüller. It focuses on the topic of "Styling components", which is used to create a simple app that creates a list of users.
+This repository is created to put in practice the first modules of the course "React - The Complete Guide 2022" by Maximilian Schwarzmüller. The main branch showcases my solution to the practice, and the tutorial-way branch includes, as its name mentions it, the way it was solved in the tutorial (React course).
 
 ## Script to run the project:
 
